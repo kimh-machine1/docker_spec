@@ -6,4 +6,4 @@ machine:
     - docker
 test:
   override:
-    - docker build .
+    - ruby docker_spec.rb
