@@ -5,9 +5,9 @@ machine:
   services:
     - docker
     
-dependencies:
-    override:
-        - docker build .
+#dependencies:
+#    override:
+#        - docker build .
         
 test:
   override:
