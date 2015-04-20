@@ -11,7 +11,7 @@ describe "Docker" do
       #end
 
       it "outputs CIRCLE_USERNAME" do
-        assert_equal('hoge', ENV['CIRCLE_USERNAME'])
+        assert_equal('kimh', ENV['CIRCLE_USERNAME'])
       end
 
     end
