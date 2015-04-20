@@ -10,6 +10,10 @@ describe "Docker" do
         assert_equal('hello', `docker run ubuntu echo hello`.strip!)
       end
 
+      it "outputs CIRCLE_USERNAME" do
+        assert_equal('hoge', ENV[CIRCLE_USERNAME])
+      end
+
     end
 
   end
