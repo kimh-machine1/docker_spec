@@ -11,4 +11,4 @@ machine:
 
 test:
   override:
-    - echo ${hello}
+    - ruby docker_spec.rb
