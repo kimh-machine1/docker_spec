@@ -4,11 +4,11 @@ machine:
 
   services:
     - docker
-    
+
 #dependencies:
 #    override:
 #        - docker build .
-        
+
 test:
   override:
-    - echo hello
+    - echo ${hello}
