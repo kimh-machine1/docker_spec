@@ -8,6 +8,11 @@ machine:
 #dependencies:
 #    override:
 #        - docker build .
+dependencies:
+  override:
+    - bundle install:
+        timeout: 180
+        retry: 20
 
 test:
   override:
