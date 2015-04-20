@@ -12,3 +12,9 @@ machine:
 test:
   override:
     - ruby docker_spec.rb
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - echo "$CIRCLE_USERNAME"
