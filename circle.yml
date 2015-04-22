@@ -4,6 +4,7 @@ machine:
 
   services:
     - docker
+    - cassandra
 
 #dependencies:
 #    override:
