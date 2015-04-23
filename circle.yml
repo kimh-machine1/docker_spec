@@ -9,7 +9,7 @@ machine:
 #dependencies:
 #    override:
 #        - docker build .
-dependencies
+dependencies:
   override:
     - bundle install --retry 3
 
