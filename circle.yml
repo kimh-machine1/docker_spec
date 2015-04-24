@@ -2,13 +2,15 @@ machine:
 
   services:
     - docker
-    - cassandra
 
 #dependencies:
 #    override:
 #        - docker build .
 
 test:
+  pre:
+    - echo this is pre
+    
   override:
     - ruby -v
 
