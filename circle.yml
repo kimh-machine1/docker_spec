@@ -1,6 +1,4 @@
 machine:
-  ruby:
-    version: 2.2.0
 
   services:
     - docker
