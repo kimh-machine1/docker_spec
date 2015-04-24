@@ -7,13 +7,10 @@ machine:
 #dependencies:
 #    override:
 #        - docker build .
-dependencies:
-  override:
-    - bundle install --retry 3
 
 test:
   override:
-    - ruby docker_spec.rb
+    - ruby -v
 
 deployment:
   master:
