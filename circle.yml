@@ -6,11 +6,14 @@ machine:
 #dependencies:
 #    override:
 #        - docker build .
+dependencies:
+  post:
+    - sudo date -s "$(curl -sD - google.com | grep ^Date: | cut -d' ' -f3-6)Z"
 
 test:
   pre:
     - echo this is pre
-    
+
   override:
     - ruby -v
 
