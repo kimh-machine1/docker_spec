@@ -10,7 +10,7 @@ machine:
 
 test:
   pre:
-    - echo "thisis ${hoge}  some space"
+    - exit 100
 
   override:
     - ruby -v
