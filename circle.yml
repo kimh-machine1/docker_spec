@@ -2,6 +2,7 @@ machine:
 
   services:
     - docker
+    - mongodb
 
 #dependencies:
 #    override:
