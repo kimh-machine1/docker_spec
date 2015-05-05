@@ -2,12 +2,10 @@ machine:
 
   services:
     - docker
-    - mongodb
 
-#dependencies:
-#    override:
-#        - docker build .
-
+dependencies:
+  pre:
+    - curl -L -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1204-3.0.2.tgz && tar xvzf mongodb-linux-x86_64-ubuntu1204-3.0.2.tgz && mv mongodb-linux-x86_64-ubuntu1204-3.0.2/bin/* /usr/bin/ && service mongodb start
 
 test:
   pre:
