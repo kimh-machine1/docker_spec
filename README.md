@@ -2,6 +2,7 @@
 [![Circle CI](https://circleci.com/gh/kimh/docker_spec.svg?style=svg)](https://circleci.com/gh/kimh/docker_spec)
 
 
+
 #### Solution
 
 ```ruby
