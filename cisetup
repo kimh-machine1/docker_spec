@@ -1,0 +1,69 @@
+#!/bin/sh -x
+# vim:set ft=sh sw=2 sts=2:
+
+apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
+
+wget -qO- http://apt.basho.com/gpg/basho.apt.key \
+  | sudo apt-key add -
+
+wget -qO- http://apt.goldstar.com/apt/goldstar/public.gpg \
+  | sudo apt-key add -
+
+echo 'deb http://apt.goldstar.com/apt/repo.percona.com/apt precise main' \
+  | sudo tee /etc/apt/sources.list.d/percona.list
+
+echo 'deb http://apt.goldstar.com/apt/apt.basho.com precise main' \
+  | sudo tee /etc/apt/sources.list.d/riak.list
+
+echo 'deb [arch=amd64] http://apt.goldstar.com/apt/goldstar precise main' \
+  | sudo tee /etc/apt/sources.list.d/goldstar.list
+
+echo
+echo 'removing'
+echo
+sudo service mysql stop
+sudo apt-get remove -y --purge riak redis-server mysql-server mysql-server-5.5 mysql-common libdbd-mysql-perl libmysqlclient18 mysql-client-core-5.5 mysql-server-core-5.5 percona-server-common-5.6
+
+# sudo apt-get autoremove
+
+echo
+echo 'updating'
+echo
+sudo apt-get update
+
+echo
+apt-cache policy riak
+echo 'installing riak'
+echo
+sudo apt-get install -y riak
+
+echo
+apt-cache policy redis-server
+echo 'installing redis'
+echo
+sudo apt-get install -y redis-server
+
+echo
+echo 'installing qt4'
+echo
+sudo apt-get install -y qt4-default
+
+sudo sed -i 's/riak_kv_bitcask_backend/riak_kv_eleveldb_backend/' /etc/riak/app.config
+sudo service riak stop
+sudo service riak start
+
+if [[ ! -e db/data/geoip/GeoLiteCity.dat ]]; then
+  curl http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz \
+    -o GeoLiteCity.dat.gz \
+    && gunzip GeoLiteCity.dat.gz \
+    && mkdir -p db/data/geoip \
+    && mv GeoLiteCity.dat db/data/geoip/GeoLiteCity.dat
+fi
+
+cd lib/helpdesk && bundle check --path=vendor/bundle \
+  || bundle install --path=vendor/bundle --jobs=4 --retry=3
+
+echo
+echo 'installing percona'
+echo
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y percona-server-server-5.6 percona-server-client-5.6
