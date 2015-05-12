@@ -5,9 +5,9 @@ machine:
   services:
     - docker
 
-dependencies:
-  pre:
-    - bash ./cisetup
+# dependencies:
+#   pre:
+#     - bash ./cisetup
 
 test:
   override:
