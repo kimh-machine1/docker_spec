@@ -10,14 +10,5 @@ dependencies:
     - bash ./cisetup
 
 test:
-  pre:
-    - exit 100
-
   override:
     - ruby -v
-
-deployment:
-  master:
-    branch: master
-    commands:
-      - echo "$CIRCLE_USERNAME"
