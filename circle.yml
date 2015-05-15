@@ -1,17 +1,13 @@
 machine:
-  environment:
-    PACKER_VERSION: 0.7.5
-
-  services:
-    - docker
+  # services:
+  #   - docker
 
 dependencies:
   pre:
-    - sudo add-apt-repository --yes ppa:ondrej/php5
-    - sudo apt-get update || true
-    - sudo apt-get -y install libcurl4-openssl-dev
-    - sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install --purge --reinstall php5 php5-common php5-cli php5-curl php5-gd php5-json php5-ldap php5-mysqlnd php5-xsl php5-odbc php5-sqlite php5-pgsql php5-xdebug
-    - sudo sed -i '/extension_dir = \/home\/ubuntu\/php\/extensions/d' /etc/php5/cli/php.ini
+    - sudo add-apt-repository ppa:beineri/opt-qt541-trusty -y
+    - sudo apt-get update
+    - sudo apt-get install -y qt54quickcontrols qt54webengine
+    - source /opt/qt54/bin/qt54-env.sh && bundle install
 
 test:
   override:
