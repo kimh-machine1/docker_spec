@@ -1,7 +1,7 @@
 machine:
   python:
-    version: 3.4.3
-    
+    version: 3.4.2
+
 dependencies:
   pre:
     - sudo add-apt-repository  ppa:beineri/opt-qt541 -y
