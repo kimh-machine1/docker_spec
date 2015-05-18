@@ -1,6 +1,6 @@
 machine:
-  ruby:
-    version: 2.2.0
+  python:
+    version: 3.4.3
     
 dependencies:
   pre:
