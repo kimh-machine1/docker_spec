@@ -17,7 +17,8 @@ test:
 #       - docker push $DOCKER_REPO:$CIRCLE_BUILD_NUM
 deployment:
   production:
+    branch: test
     codedeploy:
       foo:
-        deployment_group: foo
-        deployment_config: foo
+        deployment_group: bar
+        deployment_config: blah
