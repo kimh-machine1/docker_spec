@@ -2,13 +2,16 @@ machine:
   python:
     version: 3.4.2
 
-dependencies:
-  pre:
-    - sudo add-apt-repository  ppa:beineri/opt-qt541 -y
-    - sudo apt-get update -y; true
-    - sudo apt-get install -y qt54webkit libwebkit-dev libgstreamer0.10-dev
-    - source /opt/qt54/bin/qt54-env.sh && bundle install
+# dependencies:
+#   pre:
+#     - sudo service docker stop; sudo curl -L -o /usr/bin/docker 'http://s3-external-1.amazonaws.com/circle-downloads/docker-1.6.0-circleci'; sudo chmod 0755 /usr/bin/docker; sudo service docker start; tr
 
 test:
   override:
     - ruby -v
+
+# deployment:
+#   hub:
+#     commands:
+#       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+#       - docker push $DOCKER_REPO:$CIRCLE_BUILD_NUM
