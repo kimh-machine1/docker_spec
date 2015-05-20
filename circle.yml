@@ -5,16 +5,3 @@ machine:
 test:
   override:
     - pip install unittest2
-    - ruby -v
-
-
-
-# deployment:
-#   hub:
-#     commands:
-#       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-#       - docker push $DOCKER_REPO:$CIRCLE_BUILD_NUM
-#
-#
-#
-#
