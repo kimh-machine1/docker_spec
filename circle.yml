@@ -1,6 +1,7 @@
 machine:
-  services:
-    - redis
+  python:
+    version: 2.6.6
+    
 test:
   override:
     - ruby -v
