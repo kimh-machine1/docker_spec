@@ -1,9 +1,10 @@
 machine:
   python:
     version: 2.6.6
-    
+
 test:
   override:
+    - pip install unittest2
     - ruby -v
 
 
