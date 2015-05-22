@@ -1,7 +1,3 @@
-machine:
-  python:
-    version: 2.6.6
-
 dependencies:
   override:
       - deactivate; rm -rf ~/.virtualenv
@@ -11,4 +7,4 @@ dependencies:
 
 test:
   override:
-    - pip install unittest2
+    - tox --help
