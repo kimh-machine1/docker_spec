@@ -1,10 +1,7 @@
-dependencies:
-  override:
-      - deactivate; rm -rf ~/.virtualenv
-      - sudo apt-get update>/tmp/dep-update.out
-      - sudo apt-get install libmysqlclient-dev python2.7
-      - sudo pip install tox
+machine:
+  services:
+    - docker
 
 test:
   override:
-    - tox --help
+    - uptime
