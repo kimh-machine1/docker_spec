@@ -2,6 +2,13 @@ machine:
   python:
     version: 2.6.6
 
+dependencies:
+  override:
+      - deactivate; rm -rf ~/.virtualenv
+      - sudo apt-get update>/tmp/dep-update.out
+      - sudo apt-get install libmysqlclient-dev python2.7
+      - sudo pip install tox
+
 test:
   override:
     - pip install unittest2
