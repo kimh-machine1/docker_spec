@@ -1,6 +1,6 @@
 machine:
-  node:
-    version: v0.10.33
+  ruby:
+    version: 2.2.2
 
 test:
   override:
