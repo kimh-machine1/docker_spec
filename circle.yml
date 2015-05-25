@@ -1,7 +1,8 @@
 machine:
   services:
-    - redis
+    - docker
 
 test:
   override:
-    - echo hello
+    - echo aaa
+  
