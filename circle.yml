@@ -1,9 +1,7 @@
 machine:
-  services:
-    - docker
+  node:
+    version: v0.10.38
 
 test:
   override:
-    - exit 1
-    - exit 2
-    - exit 3
+    - echo hello
