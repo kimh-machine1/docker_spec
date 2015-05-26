@@ -2,7 +2,7 @@ general:
   branches: 
     only: 
       - master
-      - pr2
+      - /pr2/
 
 test:
   pre:
