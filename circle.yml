@@ -2,7 +2,7 @@ general:
   branches: 
     only: 
       - master
-      - /pr\/.*/ 
+      - pr2
 
 test:
   pre:
