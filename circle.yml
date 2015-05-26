@@ -1,27 +1,18 @@
-general: 
-  branches: 
-    only: 
-      - master
+dependencies:
+  pre:
+    - sudo apt-get update; sudo apt-get install firefox=36.04
 
 machine:
-
   services:
     - docker
 
-#dependencies:
-#    override:
-#        - docker build .
-
+database:
+  override:
+    - echo aaa
 
 test:
-  pre:
-    - echo "thisis ${hoge}  some space"
-
   override:
-    - ruby -v
+    - echo "aaa"
 
-deployment:
-  master:
-    branch: master
-    commands:
-      - echo "$CIRCLE_USERNAME"
+
+  
