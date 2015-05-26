@@ -3,25 +3,9 @@ general:
     only: 
       - master
 
-machine:
-
-  services:
-    - docker
-
-#dependencies:
-#    override:
-#        - docker build .
-
-
 test:
   pre:
     - echo "thisis ${hoge}  some space"
 
   override:
     - ruby -v
-
-deployment:
-  master:
-    branch: master
-    commands:
-      - echo "$CIRCLE_USERNAME"
