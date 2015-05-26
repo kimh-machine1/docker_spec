@@ -1,17 +1,10 @@
 machine:
   services:
     - docker
-  ruby:
-     version: 2.2.2
 
 database:
   override:
     - echo aaa
-
-dependencies:
-  cache_directories:
-    - "vendor/bundle"
-    - "/tmp"
 
 test:
   override:
