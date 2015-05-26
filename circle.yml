@@ -14,7 +14,7 @@ dependencies:
 
 test:
   override:
-    - bundle install --path vendor/bundle
+    - echo "aaa"
 
 
   
