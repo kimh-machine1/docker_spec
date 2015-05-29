@@ -1,9 +1,8 @@
 machine:
-  services:
-    - docker
-    
-  python:
-    version: 2.7.9
+    timezone:
+        UTC
+    python:
+        version: 2.7.9
 	
 database:
   override:
