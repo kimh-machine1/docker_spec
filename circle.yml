@@ -1,7 +1,10 @@
 machine:
   services:
     - docker
-
+    
+  python:
+    version: 2.7.9
+	
 database:
   override:
     - echo aaa
