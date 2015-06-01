@@ -3,7 +3,8 @@ machine:
     version: 2.7.9
 
 dependencies:
-  - pip install --upgrade pip
+  pre:
+    - pip install --upgrade pip
 
 test:
   override:
