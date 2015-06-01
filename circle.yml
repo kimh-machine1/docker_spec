@@ -1,12 +1,13 @@
 machine:
-
   python:
-    version: 2.6.6
+    version: 2.7.9
+
+dependencies:
+  - pip install --upgrade pip
 
 test:
   override:
-    - pip install unittest2
-    - ruby -v
+    - pip --version
 
 
 
