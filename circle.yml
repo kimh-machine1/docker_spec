@@ -8,4 +8,4 @@ database:
 
 test:
   override:
-    - curl -X POST --data-urlencode https://hooks.slack.com/services/foobar
+    - curl -X POST --data-urlencode "payload={'channel':'#critical_information'}" https://hooks.slack.com/services/foobar
