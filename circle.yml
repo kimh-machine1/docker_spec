@@ -2,11 +2,3 @@ machine:
   services:
     - docker
     
-database:
-  override:
-    - echo aaa
-
-test:
-  override:
-    - curl -X POST --data-urlencode "payload={'channel':'#critical_information','username':'CircleCi','text':'WARNING: deploy to INBOUNDSMSDEV instance started','icon_emoji':':ghost:'}" https://hooks.slack.com/services/foobar
-p   
