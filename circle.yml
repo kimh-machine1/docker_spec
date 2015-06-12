@@ -1,4 +1,10 @@
 machine:
   services:
     - docker
-    
+  environment:
+    hoo: $(echo hoo)
+
+test:
+  override:
+    - echo $hoo
+    - echo $CIRCLE_SHA1
