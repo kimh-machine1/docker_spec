@@ -2,6 +2,7 @@ machine:
   services:
     - docker
 
+
 dependencies:
   pre:
    - sudo service rabbitmq-server stop
