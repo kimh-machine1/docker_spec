@@ -1,12 +1,5 @@
 machine:
-  services:
-    - docker
+  scala:
+    version: "0.13.1"
 
-
-dependencies:
-  pre:
-   - sudo service rabbitmq-server stop
-   - sudo service couchdb stop
-   - sudo service mysql stop
-   - sudo service redis-server stop
 
