@@ -1,3 +1,8 @@
 machine:
   ghc:
     version: 7.10.1
+
+test:
+  override:
+    - case $CIRCLE_NODE_INDEX in 0) echo "this is node0" ;; 1) echo "this is node1" ;; esac:
+        parallel: true
