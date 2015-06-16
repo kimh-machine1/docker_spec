@@ -1,3 +1,1 @@
-test:
-  override:
-    - dpkg -l | grep -i zookeeper
+ersion: iojs-v2.0.2
