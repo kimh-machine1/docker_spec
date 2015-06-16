@@ -1,8 +1,3 @@
-machine:
-  ghc:
-    version: 7.10.1
-
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) echo "1"; echo "2" ;; 1) npm test ;; esac:
-        parallel: true
+    - dpkg -l | grep -i zookeeper
