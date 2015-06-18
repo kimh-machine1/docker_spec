@@ -1,4 +1,3 @@
-dependencies:
-  cache_directories:
-   - ~/.gradle
-     parallel: true
+test:
+  override:
+    - echo 1
