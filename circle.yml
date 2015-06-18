@@ -1,7 +1,4 @@
 dependencies:
-  post:
-    - rm -r ~/.gradle
-
-test:
-  override:
-    - ruby -v
+  cache_directories:
+   - ~/.gradle:
+     parallel: true
