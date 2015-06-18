@@ -2,6 +2,10 @@ machine:
   ruby:
     version: jruby-1.7.20
 
+dependencies:
+  post:
+    - rm -r ~/.gradle
+
 test:
   override:
     - ruby -v
