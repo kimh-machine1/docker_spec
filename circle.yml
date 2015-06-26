@@ -3,4 +3,4 @@ test:
     - mvn test:
       parallel: true
       files:
-        - module-check/src/test/**/*.clj
+        - module-check.js
