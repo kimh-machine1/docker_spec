@@ -1,10 +1,6 @@
-dependencies:
-  override:
-    - mkdir hoge
-
 test:
   override:
-    - echo 1
-    - echo $(pwd): 
-        background: true
-        pwd: hoge
+    - mvn test:
+      parallel: true
+      files:
+        - module-check/src/test/**/*.clj
