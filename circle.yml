@@ -2,6 +2,7 @@ machine:
   ruby:
     version: 2.2.2
 
+
 test:
   override:
     - echo 1
