@@ -5,6 +5,6 @@ dependencies:
 test:
   override:
     - echo 1
-    - pwd: 
+    - echo $(pwd): 
         background: true
         pwd: hoge
