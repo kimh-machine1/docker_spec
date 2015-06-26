@@ -1,11 +1,10 @@
-machine:
-  python:
-    version: 2.7.9
-
 dependencies:
   override:
-    - pip install docker-compose
+    - mkdir hoge
 
 test:
   override:
     - echo 1
+    - pwd: 
+        background: true
+        pwd: hoge
