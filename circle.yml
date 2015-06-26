@@ -1,6 +1,6 @@
 test:
   override:
     - mvn test:
-      parallel: true
-      files:
-        - module-check.js
+        parallel: true
+        files:
+          - module-check.js
