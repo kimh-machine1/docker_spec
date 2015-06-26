@@ -3,7 +3,6 @@ general:
     - analytics-core/build/*
     - analytics-integrations/*/build/*
     - /**\/build/
-    - build
 
 test:
   override:
