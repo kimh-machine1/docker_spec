@@ -1,6 +1,6 @@
 machine:
-  ruby:
-    version: 2.2.2
+  python:
+    version: 2.7.6
 
 
 test:
