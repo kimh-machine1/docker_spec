@@ -2,6 +2,9 @@ machine:
   python:
     version: 2.7.9
 
+dependencies:
+  override:
+    - pip install docker-compose
 
 test:
   override:
