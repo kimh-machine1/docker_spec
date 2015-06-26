@@ -2,7 +2,7 @@ general:
   artifacts:
     - analytics-core/build/*
     - analytics-integrations/*/build/*
-    - /**\/build/
+    - /.*\/build/
 
 test:
   override:
