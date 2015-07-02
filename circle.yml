@@ -14,5 +14,5 @@ test:
   override:
     - docker run -d -p 8083:8083 -p 8086:8086 -e PRE_CREATE_DB="db1" --name influxdb tutum/influxdb
     - docker run -d -p 8080:8080 -p 8081:8081 --link influxdb:influxdb --name faker gaiaadm/data-faker:$BUILD_TAG
-    -  curl -H "Content-Type: application/json -X POST -d '[{"name":"my_time_series","points":[[{{time}},"{{status}}"]],"columns":["time", "status"]}]'" http://localhost:8080/fake-data?repeat=2&sendto=influxdb
+    -  curl -H "Content-Type: application/json -X POST -d [{"name":"my_time_series","points":[[{{time}},"{{status}}"]],"columns":["time", "status"]}]" http://localhost:8080/fake-data?repeat=2&sendto=influxdb
 
