@@ -1,4 +1,4 @@
 test:
   override:
-    - curl -H "Content-Type: application/json" -X POST "http://localhost:8080/fake-data?repeat=2&sendto=influxdb"
+    - curl 
 
