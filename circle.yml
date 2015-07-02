@@ -1,15 +1,3 @@
-machine:
-  services:
-    - docker
-dependencies:
-  override:
-    - cp Dockerfile Dockerfile.run
-    - cp Dockerfile.build Dockerfile
-    - docker build -t build-img .
-    - docker create --name build-cont build-img
-    - docker cp "build-cont:/usr/local/gaia/target/data-faker-1.0-SNAPSHOT.jar" ./target
-    - cp Dockerfile.run Dockerfile
-    - docker build -t gaiaadm/data-faker .
 test:
   override:
     - docker run -d -p "8080:8080" -p "8081:8081" --link "influxdb:influxdb" --name faker "gaiaadm/data-faker:$BUILD_TAG"
