@@ -1,5 +1,4 @@
 test:
   override:
-    - docker run -d -p "8080:8080" -p "8081:8081" --link "influxdb:influxdb" --name faker "gaiaadm/data-faker:$BUILD_TAG"
     - curl -H "Content-Type: application/json" -X POST "http://localhost:8080/fake-data?repeat=2&sendto=influxdb"
 
