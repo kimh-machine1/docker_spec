@@ -7,7 +7,7 @@ dependencies:
     - cp Dockerfile.build Dockerfile
     - docker build -t build-img .
     - docker create --name build-cont build-img
-    - docker cp build-cont:/usr/local/gaia/target/data-faker-1.0-SNAPSHOT.jar ./target
+    - docker cp "build-cont:/usr/local/gaia/target/data-faker-1.0-SNAPSHOT.jar" ./target
     - cp Dockerfile.run Dockerfile
     - docker build -t gaiaadm/data-faker .
 test:
