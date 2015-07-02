@@ -1,4 +1,4 @@
 test:
   override:
-    - curl 
+    - curl -H "Content-Type: application/json"
 
