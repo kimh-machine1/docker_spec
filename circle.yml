@@ -1,7 +1,19 @@
-compile:
+machine:
+  services:
+    - docker
+dependencies:
   override:
-    - echo "hello"
-
+    - cp Dockerfile Dockerfile.run
+    - cp Dockerfile.build Dockerfile
+    - docker build -t build-img .
+    - docker create --name build-cont build-img
+    - docker cp build-cont:/usr/local/gaia/target/data-faker-1.0-SNAPSHOT.jar ./target
+    - cp Dockerfile.run Dockerfile
+    - docker build -t gaiaadm/data-faker .
 test:
   override:
-    - exit 0 
+    - docker run -d -p 8083:8083 -p 8086:8086 -e PRE_CREATE_DB="db1" --name influxdb tutum/influxdb
+    - docker run -d -p 8080:8080 -p 8081:8081 --link influxdb:influxdb --name faker gaiaadm/data-faker:$BUILD_TAG
+    - curl -H "Content-Type: application/json" -X POST -d '[{"name":"my_time_series","points":[[{{time}},"{{status}}"]],"columns":["time", "status"]}]' 'http://localhost:8080/fake-data?repeat=2&sendto=influxdb'
+    - sleep 10
+    - curl -G 'http://localhost:8086/db/db1/series?u=root&p=root' --data-urlencode "q=select * from my_time_series limit 1" | grep "status"
