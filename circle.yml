@@ -1,7 +1,5 @@
 test:
   override:
-    - echo "aaa" > aaa.txt
-
-  post:
-    - mkdir -p $CIRCLE_ARTIFACTS/junit/
-    - find . -type f -regex ".*txt" -exec cp {} $CIRCLE_ARTIFACTS/junit/ \;
+    - sleep 200
+    - echo "Sleep well!!"
+    
