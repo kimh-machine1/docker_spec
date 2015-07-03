@@ -1,5 +1,4 @@
 test:
   override:
-    - sleep 200
-    - echo "Sleep well!!"
-    
+    - echo "hello" > hello.txt
+    - cp hello.txt $CIRCLE_ARTIFACTS 
