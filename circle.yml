@@ -1,4 +1,3 @@
-test:
-  override:
-    - echo "hello" > hello.txt
-    - cp hello.txt $CIRCLE_ARTIFACTS 
+machine:
+  python:
+    version: 3.4.2
