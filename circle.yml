@@ -7,5 +7,6 @@ deployment:
   development:
     commands:
       - echo "assuming deployemt is happening"
-    post:
-      - echo "this is post"
+      
+  post:
+    - echo "this is post"
