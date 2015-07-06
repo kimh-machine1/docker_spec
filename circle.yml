@@ -1,13 +1,11 @@
-dependencies:
-  pre:
-    - echo "----------- Installing chrome ---------------"
-    - curl -L -o google-chrome-old.deb https://s3.amazonaws.com/circle-downloads/google-chrome-stable_38.0.2125.122-1_amd64.deb
-    - sudo dpkg -i google-chrome-old.deb
-    - sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
-    - rm google-chrome-old.deb
-    - echo "----------- Installing chromedriver ---------------"
-    - curl -L -o chromedriver.zip http://chromedriver.storage.googleapis.com/2.16/chromedriver_linux64.zip
-    - unzip chromedriver.zip
-    - sudo mv chromedriver /usr/local/bin/chromedriver
+test:
+  override:
+    - exit 0
 
 
+deployment:
+  development:
+    commands:
+      - echo "assuming deployemt is happening"
+    post:
+      - echo "this is post"
