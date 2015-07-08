@@ -8,3 +8,4 @@ machine:
 test:
   override:
     - docker -v
+    - docker pull blinker/runtime
