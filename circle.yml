@@ -7,4 +7,4 @@ machine:
 
 test:
   override:
-    - docker pull ubuntu
+    - docker -v
