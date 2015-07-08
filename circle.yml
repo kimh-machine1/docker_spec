@@ -1,12 +1,8 @@
+machine:
+  services:
+    - docker
+
+
 test:
   override:
-    - exit 0
-
-
-deployment:
-  development:
-    commands:
-      - echo "assuming deployemt is happening"
-      
-  post:
-    - echo "this is post"
+    - docker pull ubuntu
