@@ -1,3 +1,4 @@
 test:
   override:
     - pip --version
+    - virtualenv --version
