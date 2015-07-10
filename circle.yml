@@ -1,7 +1,7 @@
-dependencies:
-  pre:
-    - git fetch --unshallow
+machine:
+  services:
+    - cassandra
 
 test:
   override:
-    - git --no-pager log --oneline
+    - exit 0
