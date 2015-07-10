@@ -1,7 +1,7 @@
+dependencies:
+  pre:
+    - git fetch --unshallow
+
 test:
   override:
-    - pip --version
-    - virtualenv --version
-    - dpkg -l | grep php
-    - redis-server -v
-    
+    - git --no-pager log --oneline
