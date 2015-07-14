@@ -4,4 +4,5 @@ machine:
 
 test:
   override:
+    - service cassandra status
     - exit 0
