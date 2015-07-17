@@ -1,8 +1,7 @@
 machine:
-  services:
-    - cassandra
+  ghc:
+    version: 7.10.1
 
 test:
   override:
-    - service cassandra status
     - exit 0
