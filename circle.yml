@@ -1,7 +1,4 @@
-machine:
-  services:
-    - docker
-
 test:
   override:
-    - docker build .
+    - ssh node1 hostname
+    - ssh node2 hostname
