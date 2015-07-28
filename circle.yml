@@ -1,7 +1,8 @@
+machine:
+  services:
+    - docker
+
 test:
-  pre:
-    - emulator -avd circleci-android22 -no-audio -no-window:
-        background: true
-        parallel: true
-    - circle-android wait-for-boot
-  
+  override:
+    - docker build -t make-test .
+    - docker run make-test make -version
