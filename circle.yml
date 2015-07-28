@@ -1,4 +1,7 @@
 test:
-  override:
-    - case $CIRCLE_NODE_INDEX in 0) ssh node1 hostname ;; 1) ssh node0 hostname ;; esac:
+  pre:
+    - emulator -avd circleci-android22 -no-audio -no-window:
+        background: true
         parallel: true
+    - circle-android wait-for-boot
+  
